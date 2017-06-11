@@ -1,0 +1,147 @@
+body{
+	background-image: url('../images/wall1.jpeg') ;
+}
+.basket{
+	    box-shadow: 10px 10px 5px #888888;
+
+}
+#gly1 , #gly2 ,#gly3 , #gly4{
+	display: inline-block;
+	color: white;
+	padding: 1%;
+	margin-right: 1%;
+	background-color: rgba(0,0,0,0.8);
+	border: 1px solid white;
+
+	}
+.glyph{
+	width: 50%;
+	margin-left: 45%;
+	width: 100%;
+
+
+
+}
+.glyph a{
+	color: white;
+	font-size: 120%;
+	padding: 15%;
+}
+table{
+	border-collapse: collapse;
+	width: 50%;
+	margin-left: 25%;
+	border: none;
+	background-color: rgba(0,0,0,0.8);
+	color: white;
+	font-size: 120%;
+	text-align: center;
+
+/*    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);*/
+   
+}
+.quant{
+	padding-top: 10%;
+	display: inline-block;
+	background: none;
+	border: 0px;
+	border-left: none;
+	border-right: none;
+	
+
+}
+
+.quant input{
+	color:black;
+	border:none;
+	text-align: center;
+
+
+} 
+
+.quant button{
+	background: none;
+	border:none;
+}
+
+td,th{
+	padding: 3% 5%;
+	border-bottom: none;
+	border-left:none;
+	border-top:none;
+	border-right: none;
+
+}
+tr{
+		border-bottom: 1px solid #ddd;
+
+}
+.order{
+
+	background-repeat: no-repeat;
+	margin-top: 0%;
+	width:100%;
+}
+
+.sub1 {
+	margin-left: 45%;
+	background: none;
+	border: 1px solid black;
+	border-radius: 5px;
+	color: black;
+	padding: 0.5%;
+}
+
+.deli {
+	padding: 3%;
+	background-color: rgba(0,0,0,0.8);
+	color: white;
+	margin-left: 30%;
+	margin-right: 30%;
+	font-size: 15px;
+	text-align:center;
+
+
+
+}
+.deli input{
+	border-radius: 5px;
+	border: none;
+}
+
+.sub2 , .sub3 , .sub4{
+	margin-left: 10%;
+	background: none;
+	border: 1px solid black;
+	border-radius: 5px;
+	color: black;
+	padding: 0.5%;
+}
+hr{
+	width: 60%;
+}
+
+.add{
+	padding: 0%;
+	background-color: rgba(0,0,0,0.8);
+	color: white;
+	margin-left: 30%;
+	margin-right: 30%;
+	font-size: 18px;
+	text-align:center;
+
+
+
+}
+
+.pay{
+	padding: 0%;
+	background-color: rgba(0,0,0,0.8);
+	color: white;
+	margin-left: 30%;
+	margin-right: 30%;
+	font-size: 18px;
+	text-align:center;
+}

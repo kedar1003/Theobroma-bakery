@@ -1,0 +1,101 @@
+
+header{
+	color:black;
+	margin: 0;
+	padding: 30px;
+}
+body
+{
+	margin-top: 0;
+	/*background-color: rgba(0,0,0,0.9);*/
+
+}
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:black;
+    color: white;
+    opacity:0.7;
+}
+
+.prod{
+	width: 100%;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	text-align: center;
+	
+	opacity: 0.8;
+
+}
+
+
+
+
+
+
+
+.product
+{
+	height:30%;
+	width: 30%;
+	margin-top: 5%;
+	margin-left: 10%;
+	border:1px solid black;
+	position: absolute;
+}
+
+
+
+
+
+.parent{
+	padding: 2% 2% 1% 2%;
+	
+	margin-bottom: 1%;
+}
+img{
+	opacity: 1;
+	border:none;
+}
+.container{
+	height: 50%;
+	margin-left: 15%;
+	margin-right: 15%;
+	width: auto;
+	/*background-color: rgba(0,0,0,0.7);*/
+	
+	
+	
+}
+.row{
+	margin-left: 10%;
+}
+.row1{
+	height: 30%;
+	display: block;
+}
+.row2{
+	height: 30%;
+	display: block;
+}
+
+/*.thumbnail{
+	border-radius: 80%;
+	border: none;
+}*/
+
+.parent a{
+	text-align: center;
+}
+.but1{
+	
+	text-align: center;
+	
+	text-decoration: none;
+	
+	border-radius: 4px;
+	
+	margin-left: 30%;
+
+}

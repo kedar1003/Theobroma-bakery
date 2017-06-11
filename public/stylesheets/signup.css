@@ -1,0 +1,20 @@
+.sform{
+	margin: 5% 5% 0% 5%;
+	border-radius: 10px;
+	padding: 5% 5% 2% 5%;
+	background: black;
+	opacity: 1;
+	color: white;
+	font: bold;
+}
+body{
+
+		background-size: 100%;
+
+}
+
+button{
+	color: black;
+	margin-left: 50%;
+	margin-top: 2%; 
+}

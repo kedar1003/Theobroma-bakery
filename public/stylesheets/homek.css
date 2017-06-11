@@ -1,0 +1,106 @@
+header{
+    color:black;
+    background: white;
+    margin: 0;
+    padding: 30px;
+}
+body
+{
+    margin: 0;
+
+}
+
+
+
+nav .navbar .navbar-inverse .container-fluid .navbar-header a .navbar-brand
+{
+    text-align: center;
+    border: 1px solid white;
+}
+
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:black;
+    color: white;
+    opacity:0.7;
+}
+.navbar{
+    background: #111;
+    margin:0%;
+    border-radius: 0px;
+    border: hidden;
+    position: fixed;
+    width:100%;
+    opacity: 1;
+    z-index: 1;
+
+}
+.jumbotron{
+
+    margin:0;
+    height: 40%;
+    background-image: url("../images/cake.jpg");
+
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+
+
+}
+
+.menu{
+    height: 450px;
+    width: 200px;
+}
+.menu1{
+    height: 450px;
+    width: 200px;
+    background-color: black;
+    opacity: 0.7;
+    color: white;
+    list-style-type: none;
+    padding: 50px;
+    margin-bottom: 5%;
+    position: fixed;
+    left:0;
+    top: 11%
+
+
+
+
+
+}
+
+.menu1 li{
+    text-align: center;
+
+}
+.menu1 li a{
+    color: white;
+
+
+
+}
+
+nav .navbar .navbar-inverse{
+    margin: 0;
+}
+
+.foot{
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 0;
+    height: 20%;
+    width: auto;
+    opacity: 0.9;
+}
+
+
+
+
