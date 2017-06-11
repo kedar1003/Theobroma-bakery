@@ -1,0 +1,122 @@
+d<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $.get('/check',{},function(check){
+            if(!(check === 'undefined')){
+                $('.signup').hide();
+                $('.logout').show();
+                uname=check.split('@',1);
+                $('.uname').html("Hello!<a href='#'><span class='glyphicon' ></span>"+uname+"</a><br><a href='/placeorder'>Orders</a>");
+
+            }
+        });
+        var email,pass;
+        $("#submit").click(function(){
+            email=$(".email").val();
+            pass=$(".pass").val();
+            /*
+             * Perform some validation here.
+             */
+            $.post("/loggedin",{email:email,pass:pass},function(data){
+                if(data === "success")
+                {
+                    $('.signup').hide();
+                    $('.logout').show();
+                    uname=email.split('@',1);
+                    $('.uname').show();
+                    $('.uname').html("Hello!<a href='#'><span class='glyphicon' ></span>"+uname+"</a>");
+
+
+                }
+                else{
+                    alert("invalid email or password")
+                }
+
+            });
+
+
+        });
+        $('.logout').click(function(){
+           $.get('/logout',{},function(){
+              $('.logout').hide();
+              $('.uname').hide();
+              $('.signup').show();
+
+           });
+        });
+
+    });
+</script>
+<nav class="navbar navbar-inverse ">
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="theobroma" style="padding-left: 40%;">
+                <a class="navbar-brand" href="/">Theobroma</a>
+            </div>
+        </div><br>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/signup" class="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li class="dropdown signup"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-log-in"></span> Login<span class="caret"></span></a>
+                    <ul id="login-dp" class="dropdown-menu">
+                        <li>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    Login via
+                                    <div class="social-buttons">
+                                        <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                                        <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                                    </div>
+                                    or
+
+                                        <div class="form-group">
+                                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                            <input type="email" class="form-control email" name="email" id="exampleInputEmail2 email" placeholder="Email address" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                            <input type="password" class="form-control pass"  id="exampleInputPassword2 pass" placeholder="Password" required>
+                                            <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button id="submit" class="btn btn-primary btn-block">Sign in</button>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> keep me logged-in
+                                            </label>
+                                        </div>
+
+                                </div>
+                                <div class="bottom text-center">
+                                    New here ? <a href="#"><b>Join Us</b></a>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+
+
+                </li>
+                <li><div class="uname" style="color:white"  ></div></li>
+                <li><a href="/" class="logout" style="display:none"><span class="glyphicon glyphicon-user"></span>Log out</a></li>
+            </ul>
+
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<br>

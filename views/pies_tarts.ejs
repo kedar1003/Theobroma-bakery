@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title%></title>
+    <% include templates/link.ejs%>
+</head>
+<body>
+<% include templates/nav.ejs %>
+<div class="jumbotron" style="background:url(../images/cake.jpg) cover">
+
+
+    <div class="menu">
+
+
+    </div>
+
+
+
+
+</div>
+<% include templates/menu.ejs%>
+<div class="prod">
+    <h1><%= title%></h1>
+</div>
+<br>
+
+<div class="container">
+
+    <div class="row row3">
+        <div class="col-md-3 parent" style="background-color: none;">
+            <div class="thumbnail">
+                <a href="/applepie" >
+                    <img src="images/applepie.jpeg" >
+
+                    <h4>Apple Pie</h4>
+                </a>
+                <% include templates/atc.ejs%>
+
+            </div>
+        </div>
+        <div class="col-md-3 parent" style="background-color: none;">
+            <div class="thumbnail">
+                <a href="/chocopeanut" >
+                    <img src="images/chocopen.jpeg" >
+
+                    <h4>Peanut Butter Pie</h4>
+                </a>
+                <% include templates/atc.ejs%>
+
+            </div>
+        </div>
+        <div class="col-md-3 parent" style="background-color: none;">
+            <div class="thumbnail">
+                <a href="/pecanpie" >
+                    <img src="images/pecanpie.jpeg" >
+
+                    <h4>Pecan Pie</h4>
+                </a>
+                <% include templates/atc.ejs%>
+
+            </div>
+        </div>
+        <div class="col-md-3 parent" style="background-color: none;">
+            <div class="thumbnail">
+                <a href="/treacle" >
+                    <img src="images/treacletart.jpeg" >
+
+                    <h4>Treacle Tart</h4>
+                </a>
+                <% include templates/atc.ejs%>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>
+<% include templates/jlink.ejs %>
+</body>
+</html>

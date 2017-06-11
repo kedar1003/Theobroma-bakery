@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <% include templates/link.ejs%>
+        <style>
+            .effect{
+                background: black;
+                opacity: 0.7;
+                color: white;
+                z-index: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <% include templates/nav.ejs %>
+        <div class="jumbotron" style="background:url(../images/cake.jpg) cover">
+
+
+            <div class="menu">
+
+
+            </div>
+
+
+
+
+        </div>
+        <% include templates/menu.ejs %>
+        <div class="prod">
+            <h1>Our Products</h1>
+        </div>
+        <br>
+
+        <div class="container">
+
+            <div class="row row3">
+                <div class="col-md-6 parent" style="background-color: none;">
+                    <div class="thumbnail">
+
+                        <a href="/regcupcake">
+                            <img src="images/regcupcake.jpeg" >
+
+                        </a>
+
+                        <h2 class="effect" style="display: none;">View all regular cupcake</h2>
+
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-6 parent" style="background-color: none;">
+                    <div class="thumbnail">
+                        <a href="/minicupcake">
+                            <img src="images/minicupcake.jpeg" >
+
+                        </a>
+                        <h2 class="effect" style="display: none">View all Mini cupcake</h2>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+            <div class="row row1">
+                <div class="col-md-6 parent" style="background-color: none;">
+                    <div class="thumbnail">
+                        <a href="/celebration">
+                            <img src="images/cc.jpeg" >
+
+                        </a>
+
+                        <h2 class="effect" style="display: none">View all Celebration Cake</h2>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-6 parent" style="background-color: none;">
+                    <div class="thumbnail">
+                        <a href="/layered_cake">
+                            <img src="images/lc.jpeg" >
+
+                        </a>
+                        <h2 class="effect" style="display: none">View all Layered Cake</h2>
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+            <div class="row row2">
+
+                <div class="col-md-6 parent" style="background-color: none;">
+                    <div class="thumbnail">
+                        <a href="/lsb">
+                            <img src="images/lsb.jpeg" >
+
+                        </a>
+                        <h2 class="effect" style="display: none">View all Loaves Slices and Biscuits</h2>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-6 parent" style="background-color: none;">
+                    <div class="thumbnail">
+                        <a href="/pies_tarts">
+                            <img src="images/pt.jpeg" >
+
+
+                        </a>
+                        <h2 class="effect" style="display: none">View all Pies and Tarts</h2>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <% include templates/jlink.ejs%>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+
+                $(".thumbnail").mouseenter(function(){
+
+                   $(this).children().fadeIn();
+                });
+
+                $(".thumbnail").mouseleave(function(){
+                   $("h2").hide();
+                });
+            });
+        </script>
+
+    </body>
+</html>

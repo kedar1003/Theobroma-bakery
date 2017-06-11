@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title%></title>
+        <% include templates/link.ejs%>
+
+        <link href="stylesheets/register.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <% include templates/nav.ejs%>
+        <div class="container"> <div class="sform">
+            <form id="sform" method="post" action="/register">
+                <div class="form-group">
+                    <label>First Name:</label><input class="form-control" type="text" name="fname" placeholder="First name" id="fname">
+                </div>
+                <div class="form-group">
+                    <label>Last Name:</label><input class="form-control" type="text" name="lname" placeholder="Last name" id="lname">
+                </div>
+                <div class="form-group">
+                    <label>Age:</label><input class="form-control" type="number" name="age" placeholder="Age" id="age">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address:</label>
+                    <input type="email" class="form-control " id="exampleInputEmail1 email" placeholder="Email" name="email" >
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password:</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1 id" placeholder="Password" name="pass">
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password:</label><input type="password" name="cpass" class="form-control" placeholder="Confirm Password" id="cpass">
+                </div>
+                <div class="form-group">
+                    <label>Contact:</label><input type="number" name="contact" class="form-control" placeholder="contact" id="contact">
+                </div>
+                <button type="submit" class="btn btn-default submit" >Submit</button>
+            </form>
+            </div></div>
+
+
+
+        <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+        <script>
+            $("#sform").validate({
+                rules:{
+                    fname:"required",
+                    lname:"required",
+                    email:{
+                        required:true,
+                        email:true
+                    },
+                    pass:{
+                        required:true,
+                        minlength:8
+                    },
+                    cpass:{
+                      required:true,
+                    },
+                    age:{
+                        required:true,
+                        number:true,
+                        max:80
+                    },
+                    contact:{
+                        required:true,
+                        number:true,
+                        minlength:10,
+                        maxlength:10
+                    }
+                }
+            });
+
+
+        </script>
+
+
+        <% include templates/jlink.ejs%>
+    </body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title%></title>
+        <% include templates/link.ejs%>
+        <link rel="stylesheet" type="text/css" href="stylesheets/placeorder.css">
+    </head>
+    <body>
+        <% include templates/nav.ejs%>
+        <br><br>
+        <div class="order">
+
+            <br>
+            <div class="glyph">
+                <div id="gly1">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </a>
+                </div>
+
+                <div id="gly2">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </a>
+                </div>
+
+                <div id="gly3">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </a>
+                </div>
+
+                <div id="gly4">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div style=" margin-left:10%">
+                <div class="basket">
+                    <table border="1">
+                        <tr>
+                            <th>PRODUCT</th>
+
+
+                            <th>PRICE</th>
+
+
+
+                            <th>QUANTITY</th>
+
+                            <th>NET PRICE</th>
+                        </tr>
+
+
+
+
+                    </table>
+                    <br>
+                    <br>
+                    <button class="sub1">SUBMIT</button>
+                </div>
+                <div class="deli">
+                    <div class="delivery" style="display:none;">
+                        SELECT THE DELIVERY DATE AND TIME<br><hr>
+                        DATE:<input type="date" class="date" style="color:black"><br><hr>
+                        TIME:<input type="time" class="time" style="color:black"><br><hr>
+                        <button class="sub2">SUBMIT</button>
+                    </div>
+
+                </div>
+                <div class="add">
+                    <div class="address" style="display:none">
+                        SELECT THE DELIVERY ADDRESS<br><br><hr>
+
+
+                        Address:<br><textarea style="height:200px;color:black" class="address1"></textarea><br><br>
+                        <button class="sub3">SUBMIT</button>
+                    </div>
+
+                </div>
+                <div class="pay">
+                    <div class="payment" style="display:none">
+                        SELECT THE PAYMENT MODE:<br><hr>
+                        CREDIT CARD<input type="checkbox"><br><hr>
+                        DEBIT CARD<input type="checkbox"><br><hr>
+                        NET BANKING<input type="checkbox"><br><hr>
+                        <button class="sub4">SUBMIT</button>
+                    </div>
+
+
+                </div>
+                <div class="confirm" style="display:none">
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(".basket > button").click(function(){
+                    $(".delivery").css("display","inline");
+                    $(".basket").hide();
+                });
+                $(".delivery > button").click(function(){
+                    $(".address").css("display","inline");
+                    $(".delivery").hide();
+                    var date = $('.date').val();
+                    var time = $('.time').val();
+                    $.get('/check',{},function(check){
+                       $.post('/datetime',{email:check,date:date,time:time},function(err){
+                           console.log(err);
+                       }) ;
+                    });
+
+                });
+                $(".address > button").click(function(){
+                    $(".payment").css("display","inline");
+                    $(".address").hide();
+                    var address = $('.address1').val();
+                    $.get('/check',{},function(check){
+                        $.post('/address',{email:check,address:address},function(email){
+                            console.log(email);
+                        });});
+                });
+                $(".payment > button").click(function(){
+                   $.get('/check',{},function(check){
+                       $.post('/pay',{email:check},function(email){
+                           console.log(email);
+                       });
+                   });
+                });
+            });
+        </script>
+
+     <!--   <script>
+            $(document).ready(function(){
+                $(".inc ").click(function(){
+                    var q = parseInt($(".quantity").val());
+                    if(q<10)
+                    {
+                        q=q+1;
+                    }
+                    $(".quantity").val(q);
+                });
+
+                $(".dec").click(function(){
+                    var q= parseInt($(".quantity").val());
+                    if(q > 1)
+                    {
+                        q=q-1;
+                    }
+
+                    $(".quantity").val(q);
+                });
+            });
+
+
+        </script> -->
+        <script>
+            $(document).ready(function(){
+                $('#gly1').click(function(){
+                    $(".basket").show();
+                    $(".delivery").hide();
+                    $(".address").hide();
+                    $(".payment").hide();
+                });
+
+                $('#gly2').click(function(){
+                    $(".delivery").show();
+                    $(".basket").hide();
+                    $(".address").hide();
+                    $(".payment").hide();
+                });
+
+                $('#gly3').click(function(){
+                    $(".address").show();
+                    $(".basket").hide();
+                    $(".delivery").hide();
+                    $(".payment").hide();
+                });
+
+                $('#gly4').click(function(){
+                    $(".payment").show();
+                    $(".basket").hide();
+                    $(".delivery").hide();
+                    $(".address").hide();
+                });
+
+
+
+            });
+        </script>
+        <script>
+            function test(quan,price){
+                if(quan){
+                    return quan*price;
+                }
+                return 1*price;
+
+            }
+        </script>
+        <script>
+            $(document).ready(function(){
+
+               $.get('/check',{},function(check){
+                   $.post('/getorder',{email:check},function(rows){
+
+                        var i=0;
+                        var sum=0;
+                       rows.forEach(function(){
+
+                           $("table").append('<tr><td>'+rows[i].product+'</td><td>'+rows[i].price+'</td><td class="quant"><input type="number" class="quantity" name="qua" min="1" max="10" step="1" value="1"></td><td ><input class="netprice" style="color:black;width:50px;"  type="number" value="'+test($(".quantity").val(),rows[i].price)+'"></td></tr>');
+
+                           netprice=($(".quantity").val()*rows[i].price);
+                            sum=sum+netprice;
+
+
+                           i++;
+
+                       });
+
+                        $("table").append('<tr><td colspan="3" align="right">TOTAL</td><td>RS.'+sum+'</td></tr>');
+
+                   });
+               }) ;
+
+
+            });
+        </script>
+    </body>
+</html>

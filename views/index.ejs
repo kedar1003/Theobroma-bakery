@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <% include templates/link.ejs%>
+  </head>
+  <body>
+    <% include templates/nav.ejs%>
+    <div class="jumbotron">
+
+
+        <div class="menu">
+
+
+        </div>
+
+
+
+
+    </div>
+    <% include templates/menu.ejs%>
+    <div class="row">
+        <!--about para-->
+
+    </div>
+
+    <div class="container-fluid bg-3 text-center" style="margin-left: 15%;">
+        <h3>At Theobroma....</h3>
+        <div class="row">
+            <div class="col-sm-4">
+                <p>Classy Cakes</p>
+                <img   src="images/b7.jpg" width="300" height="200">
+            </div>
+            <div class="col-sm-4">
+                <p>Fresh breads</p>
+                <img   src="images/b2.jpg" width="300" height="200">
+            </div>
+            <div class="col-sm-4">
+                <p>Handmade cookies</p>
+                <img  src="images/b3.jpg"  width="300" height="200">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h2 style="text-align: center;">Featured Products</h2>
+    <hr>
+    <div class="container-fluid	text-center fproducts" style="margin-left: 15%;">
+
+
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <a href="blueberrycupcake.html">
+                    <img src="images/blue.jpg">
+                    <h4>Blueberry Cupcake</h4>
+
+                </a>
+                <% include templates/atc.ejs%>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <a href="blueberrycupcake.html">
+                    <img src="images/nrvcc.jpeg">
+                    <h4>Natural Red Velvet Cake</h4>
+
+                </a>
+                <% include templates/atc.ejs%>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <a href="blueberrycupcake.html">
+                    <img src="images/coclc.jpeg">
+                    <h4>Coconut Layered Cake</h4></a>
+                <% include templates/atc.ejs%>
+            </div>
+
+        </div>
+
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <a href="blueberrycupcake.html">
+                    <img src="images/applepie.jpeg">
+                    <h4>Apple Pie</h4></a>
+                <% include templates/atc.ejs%>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <% include templates/jlink.ejs%>
+  </body>
+</html>
